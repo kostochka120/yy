@@ -1,0 +1,43 @@
+$bgGradiend: linear-gradient(#04162E, 100%, #01031D 100%);
+$color: #fff;
+$radius: 12px;
+
+body{
+    height:100vh;
+    width:100%;
+    background:$bgGradiend;
+
+    color:$color;
+
+    margin:0;
+}
+
+.rulerPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .rulerHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:100%;
+        height:60px;
+        margin-bottom:25px;
+        .logoContainer{
+            width:50px;
+        }
+        .title{
+            font-size: 22px;
+        }
+    }
+    .instruction{
+        padding:0 20px;
+        background: $color;
+        border-radius: $radius;
+        li{
+            margin:12px 0;
+        }
+    }
+}
