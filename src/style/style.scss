@@ -27,17 +27,22 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
-.hide{
-    display: none;
+    .mainLogo{
+        height:250px;
+    }
+
+    .mainContent{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .rulerPage{
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
 
     .rulerHeader{
         display: flex;
@@ -81,9 +86,109 @@ body{
     }
     .rulerContainer{
         display: flex;
+        justify-content: space-around;
         align-items: center;
+        height: 212px;
+        width: 100%;
 
         .size{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            height: 100%;
+
+            margin-left: 24px;
+            margin-right:10px;
+        }
+        .ruler{
+            position: relative;
+
+            display: flex;
+            align-items: center;
+
+            height: 100%;
+            width: calc(100% - 150px);
+
+            border-left: 2px solid;
+
+            .metric{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                z-index: -1;
+                left: 46px;
+                
+                img{
+                    margin-right:2px;
+                }
+            }
+
+            .topRule{
+                display: flex;
+                    width: 100%;
+                    position: absolute;
+                    height: 4px;
+                    top: 7.5px;
+
+                .topRuleContainer{
+                    position:relative;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .blurBG{
+                position: absolute;
+                width: 100%;
+                height: 112px;
+
+                background: rgba(68, 155, 174, 0.5);
+                backdrop-filter: blur(1.5px);
+
+                p{
+                    font-size: 8px;
+                }
+            }
+
+            .rangeSize{
+                position: absolute;
+                left: 50%;
+                height: inherit;
+                display: flex;
+                align-items: center;
+
+                border-left: 2px dashed #38EAEA;
+
+                img{
+                    padding-left:24px;
+                }
+            }
+
+            .bottomRule{
+                display: flex;
+                width: 100%;
+                position: absolute;
+                height: 4px;
+                bottom: 7.5px;
+
+                .bottomRuleContainer{
+                    position:relative;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
+}
+
+.hide{
+    display: none;
+}
+
+.descript{
+    text-align: center;
+    margin:0;
+    margin-bottom:10px;
 }
