@@ -1,15 +1,36 @@
+@import 'fonts.scss';
+
 $bgGradiend: linear-gradient(#04162E, 100%, #01031D 100%);
+$whiteGradiend:linear-gradient(#FFF, 10%, #FFF 0);;
 $color: #fff;
 $radius: 12px;
+
+$roboto: 'Roboto', sans-serif;
+$raleway: 'Raleway', sans-serif;
 
 body{
     height:100vh;
     width:100%;
-    background:$bgGradiend;
+    //background:$bgGradiend;
 
     color:$color;
 
     margin:0;
+
+    font-family: $roboto;
+
+    background: url('фон.png');
+    background-color: #0b0328;
+}
+
+.orientationPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hide{
+    display: none;
 }
 
 .rulerPage{
@@ -30,14 +51,39 @@ body{
         }
         .title{
             font-size: 22px;
+            font-family: $raleway;
         }
     }
     .instruction{
-        padding:0 20px;
-        background: $color;
+        width: calc(100% - 94px - 40px);
+
+        margin-bottom:22px;
+        padding:20px;
+
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(3, 5, 48, 0) 100%);
+        box-shadow: 4px 4px 10px rgb(10 2 44 / 25%);
+         backdrop-filter: blur(5px);
         border-radius: $radius;
-        li{
-            margin:12px 0;
+
+        font-family: $roboto;
+        color:$color;
+        font-size: 14px;
+        font-weight: 400;
+
+        .instructionList{
+            padding-left: 20px;
+
+            li{
+                margin:12px 0;
+                padding-left:13px;
+            }
+        }
+    }
+    .rulerContainer{
+        display: flex;
+        align-items: center;
+
+        .size{
         }
     }
 }
