@@ -1,6 +1,8 @@
 import './style/style.scss';
 
 let orientationPage = document.querySelector('.orientationPage');
+let rulerPage = document.querySelector('.rulerPage')
+
 let pages = document.querySelectorAll('.page');
 let ruler = document.querySelector('.ruler');
 let rulerTop = document.querySelector('.topRule');
@@ -14,20 +16,16 @@ let range = document.querySelector('.rangeSize');
 
 let convertMM = 4;
 
-function detectOrientation(){
-    if(window.orientation == 90){
-        for(let page of pages){
-            page.classList.remove('hide')
-        }
-        orientationPage.classList.add('hide')
-    }else{
-        for(let page of pages){
-            page.classList.add('hide')
-        }
-
-        orientationPage.classList.remove('hide')
+function openPage(view){
+    for(let page of pages){
+         page.classList.add('hide')
     }
-}detectOrientation()
+    view.classList.remove('hide')
+}
+
+if(window.orientation != 90){
+    openPage(orientationPage)
+}
 
 /*function ruleCreate(){
     let ruleSize = window.innerWidth - 150;
@@ -82,7 +80,7 @@ ruleCreate()
       if(0 >= touchLocation.pageX-174){
         range.style.left = '0px'
       }
-      if(touchLocation.pageX-174 >= ruler.clientWidth){
+      if(touchLocation.pageX-150 >= ruler.clientWidth){
         range.style.left = ruler.clientWidth + 'px'
       }
     })
@@ -93,4 +91,10 @@ ruleCreate()
     })
     
 
-window.addEventListener('orientationchange', detectOrientation)
+window.addEventListener('orientationchange', function(){
+    if(window.orientation != 90){
+        openPage(orientationPage)
+    }else{
+        openPage(rulerPage)
+    }
+})

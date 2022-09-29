@@ -52,7 +52,11 @@ body{
         height:60px;
         margin-bottom:25px;
         .logoContainer{
+            padding-right: 20px;
             width:50px;
+        }
+        .beforeButton{
+            padding-left:20px;
         }
         .title{
             font-size: 22px;
@@ -118,7 +122,7 @@ body{
                 display: flex;
                 align-items: center;
                 z-index: -1;
-                left: 46px;
+                left: 36.5px;
                 
                 img{
                     margin-right:2px;
@@ -147,8 +151,20 @@ body{
                 background: rgba(68, 155, 174, 0.5);
                 backdrop-filter: blur(1.5px);
 
-                p{
-                    font-size: 8px;
+                .blurContent{
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    width:132px;
+                    height: 100%;
+
+                    margin-left:54px;
+                    p{
+                        text-align: center;
+                        font-size: 8px;
+                    }
                 }
             }
 
